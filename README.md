@@ -1,7 +1,7 @@
 # Loading Signin info via Github oAuth
 <p>
-<img src="https://i.imgur.com/9mQOgjJ.png" width="270" height="612">
-<img src="https://i.imgur.com/bi63jSY.png" width="270" height="612">
+<img src="https://user-images.githubusercontent.com/3841546/134490872-6f1b1393-8827-436b-9369-bb4877b84a01.png" width="270" height="612">
+<img src="https://user-images.githubusercontent.com/3841546/134490909-7f2c0de3-68e9-492e-a6ee-34109e6f15ac.png" width="270" height="612">
 </p>
 
 
