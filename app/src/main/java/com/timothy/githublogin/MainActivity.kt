@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.timothy.githublogin.databinding.ActivityMainBinding
 import com.timothy.githublogin.model.Status
 import com.timothy.githublogin.utils.GITHUB_CLIENT_ID
@@ -32,12 +33,24 @@ class MainActivity @Inject constructor(): AppCompatActivity() {
                 getCodeFromGithub()
             }else {
                 Timber.d("userResponse:${it.data.toString()}")
-                binding.text.text = it.data.toString()
+                it.data?.let {
+                    with(binding){
+                        signinAccount.setText(it.login)
+                        email.setText(it.email)
+                        name.setText(it.name)
+                        location.setText(it.location)
+                    }
+                }
+                Snackbar.make(binding.root, "Loading data from github", Snackbar.LENGTH_SHORT).show()
             }
         }
 
-        binding.button.setOnClickListener {
+        binding.oauthGithub.setOnClickListener {
             viewmodel.getAuth()
+        }
+
+        binding.button.setOnClickListener {
+            Snackbar.make(binding.root, "just a fake button, click the github button", Snackbar.LENGTH_SHORT).show()
         }
     }
 
